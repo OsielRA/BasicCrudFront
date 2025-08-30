@@ -1,15 +1,19 @@
+export type Role = 'admin' | 'user'
+
 export interface User {
-  id: string
+  id: number          // Ajustado a tipo de ID en el backend (number)
   name: string
+  lastName: string
   email: string
-  role?: 'admin' | 'user'
+  profileId?: number | null
   createdAt?: string
   updatedAt?: string
 }
 
-export interface Paginated<T> {
-  data: T[]
-  total: number
-  page: number
-  pageSize: number
+export interface UserCreation {
+  name: string
+  lastName: string
+  email: string
+  password: string
+  profileId?: number | null
 }
